@@ -3352,6 +3352,7 @@ AC_CHECK_FUNCS([fnmatch \
   gettimeofday \
   if_nametoindex \
   mach_absolute_time \
+  memmem \
   pipe \
   setlocale \
   setmode \

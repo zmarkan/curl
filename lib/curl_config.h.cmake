@@ -662,6 +662,9 @@
 /* Define to 1 if you have the strstr function. */
 #cmakedefine HAVE_STRSTR 1
 
+/* Define to 1 if you have the memmem function. */
+#cmakedefine HAVE_MEMMEM 1
+
 /* Define to 1 if you have the strtok_r function. */
 #cmakedefine HAVE_STRTOK_R 1
 
