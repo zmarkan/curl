@@ -4,16 +4,17 @@ version: 2.1
 commands:
   configure:
     steps:
-      - ./buildconf
-      - ./configure
+      - run: |
+          ./buildconf
+          ./configure
 
   build:
     steps:
-      - make
+      - run: make
 
   test:
     steps:
-      - make test-nonflaky
+      - run: make test-nonflaky
 
 executors:
   ubuntu:
