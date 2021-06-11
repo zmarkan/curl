@@ -4,9 +4,10 @@ version: 2.1
 commands:
   configure:
     steps:
-      - run: |
-          ./buildconf
-          ./configure
+      - run: 
+          command: |
+            ./buildconf
+            ./configure
 
   build:
     steps:
