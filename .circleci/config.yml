@@ -15,7 +15,7 @@ commands:
     steps:
       - make test-nonflaky
 
-jons:
+jobs:
   first:
     steps:
       - configure
