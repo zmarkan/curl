@@ -21,9 +21,14 @@ executors:
       image: ubuntu-2004:202010-01
 
 jobs:
-  first:
+  basic:
     executor: ubuntu
     steps:
       - configure
       - build
       - test
+
+workflow:
+  all:
+    jobs:
+      - basic
