@@ -26,6 +26,7 @@ jobs:
   basic:
     executor: ubuntu
     steps:
+      - checkout
       - configure
       - build
       - test
