@@ -38,6 +38,9 @@ jobs:
     executor: docker
     steps:
       - checkout
+      - run: 
+          command: sudo apt-get install libtool autoconf automake pkg-config
+          name: install prereqs
       - configure
       - build
       - test
