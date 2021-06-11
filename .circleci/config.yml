@@ -51,10 +51,12 @@ jobs:
       - configure
       - build
       - test
+    parallelism: 5
+
 
 
 workflows:
   all:
     jobs:
       - basic
-      # - basic-docker
+      - basic-docker
