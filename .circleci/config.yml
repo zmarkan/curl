@@ -15,8 +15,12 @@ commands:
 
   test:
     steps:
-      - run: TFLAGS="$CIRCLE_NODE_INDEX" make test-nonflaky
-
+      - run: 
+          command: TFLAGS="-l" make test-nonflaky  | pcregrep -o1 "test (\d+)\.\.\." | circleci tests split > tests.txt
+          name: split tests
+      - run:
+          command: TFLAGS="$(cat tests.txt | tr '\n' ' ')" make test-nonflaky
+    
 executors:
   ubuntu:
     machine:
@@ -34,7 +38,7 @@ jobs:
       - build
       - test
     parallelism: 5
-      
+
   basic-docker:
     executor: docker
     steps:
@@ -42,7 +46,7 @@ jobs:
       - run: 
           command: | 
             sudo apt-get update
-            sudo apt-get install libtool autoconf automake pkg-config libssl-dev
+            sudo apt-get install libtool autoconf automake pkg-config libssl-dev pcregrep
           name: install prereqs
       - configure
       - build
