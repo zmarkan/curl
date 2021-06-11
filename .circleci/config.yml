@@ -21,6 +21,9 @@ executors:
   ubuntu:
     machine:
       image: ubuntu-2004:202010-01
+  docker:
+    docker:
+      - image: cimg/base:2021.05
 
 jobs:
   basic:
@@ -30,8 +33,18 @@ jobs:
       - configure
       - build
       - test
+  
+  basic-docker:
+    executor: docker
+    steps:
+      - checkout
+      - configure
+      - build
+      - test
+
 
 workflows:
   all:
     jobs:
       - basic
+      - basic-docker
