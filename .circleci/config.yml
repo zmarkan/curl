@@ -28,7 +28,7 @@ jobs:
       - build
       - test
 
-workflow:
+workflows:
   all:
     jobs:
       - basic
