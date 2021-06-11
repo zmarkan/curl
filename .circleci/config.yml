@@ -39,7 +39,9 @@ jobs:
     steps:
       - checkout
       - run: 
-          command: sudo apt-get install libtool autoconf automake pkg-config
+          command: | 
+            sudo apt-get update
+            sudo apt-get install libtool autoconf automake pkg-config
           name: install prereqs
       - configure
       - build
