@@ -17,7 +17,8 @@ commands:
 
 executors:
   ubuntu:
-    image: ubuntu-2004:202010-01
+    machine:
+      image: ubuntu-2004:202010-01
 
 jobs:
   first:
