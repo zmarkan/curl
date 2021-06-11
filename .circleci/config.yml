@@ -7,7 +7,7 @@ commands:
       - run: 
           command: |
             ./buildconf
-            ./configure
+            ./configure --enable-warnings --enable-werror --with-openssl
 
   build:
     steps:
