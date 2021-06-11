@@ -41,7 +41,7 @@ jobs:
       - run: 
           command: | 
             sudo apt-get update
-            sudo apt-get install libtool autoconf automake pkg-config
+            sudo apt-get install libtool autoconf automake pkg-config libssl-dev
           name: install prereqs
       - configure
       - build
